@@ -5,6 +5,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import Navbar from './components/navigation/Navbar.component';
 import LandingPage from './views/LandingPage.view';
+import ProductDetails from './views/product/ProductDetails.view';
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
       <div className="container mt-5">
         <Switch>
           <Route exact path="/" component={LandingPage} />
+          <Route exact path="/products" component={LandingPage} />
+          <Route exact path="/products/details/:id" component={ProductDetails} />
         </Switch>
       </div>
     </BrowserRouter>
