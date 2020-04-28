@@ -10,9 +10,11 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <Switch>
-        <Route path="/" component={LandingPage} />
-      </Switch>
+      <div className="container mt-5">
+        <Switch>
+          <Route exact path="/" component={LandingPage} />
+        </Switch>
+      </div>
     </BrowserRouter>
   )
 }
