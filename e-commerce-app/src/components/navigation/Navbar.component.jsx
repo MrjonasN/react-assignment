@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './Navbar.styles.css'
+import ShoppingCart from '../cart/ShoppingCart.component'
 
 const Navbar = () => {
   return (
@@ -40,23 +42,25 @@ const Navbar = () => {
           </ul>
           <ul className="navbar-nav ml-auto nav-flex-icons">
 
-            {/* <li className="nav-item dropdown">
-              <a
-                className="nav-link mr-2"
+
+            <li className="nav-item dropdown">
+              <button
+                className="nav-link btn m-0 mr-2"
                 type="button"
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                {{ shoppingCartItemCount }}
+                <span className="product-counter">1</span>
                 <i className="fas fa-shopping-cart"></i>
-              </a>
+              </button>
               <div className="dropdown-menu dropdown-menu-right z-depth-2 shopping-cart">
                 <ShoppingCart />
               </div>
             </li>
 
 
+            {/* 
             <li className="nav-item dropdown">
               <a
                 className="nav-link mr-2 dropdown-toggle"
@@ -73,8 +77,9 @@ const Navbar = () => {
             </li> */}
 
             <li className="nav-item">
-              <Link className="nav-link" to="/login">Logga in</Link>
+              <Link className="nav-link mt-1" to="/login">Logga in</Link>
             </li>
+
           </ul>
         </div>
       </div>
