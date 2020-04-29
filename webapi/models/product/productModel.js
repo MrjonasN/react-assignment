@@ -27,9 +27,9 @@ exports.registerProduct = (req, res) => {
 
 exports.getProducts = (req, res) => {
     Product.find(Product)
-    .then(product => {
+    .then(products => {
         
-        if(product === null)
+        if(products === null)
             return res.status(404).json({
                 statusCode: 404,
                 status: false,
@@ -37,9 +37,9 @@ exports.getProducts = (req, res) => {
             })
         
         return res.status(200).json({
-            statusCode: 200,
-            status: true,
-            product          
+            // statusCode: 200,
+            // status: true,
+            products          
         })
     })
     .catch(error => res.status(404).json({
