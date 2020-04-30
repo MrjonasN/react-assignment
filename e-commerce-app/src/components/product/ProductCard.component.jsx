@@ -15,7 +15,7 @@ const ProductCard = (props) => {
 
                 <div className="card-body text-left">
                     <h4 className="mb-1 py-2">{props.product.name}</h4>
-                    <p className="mb-1 py-2">{props.product.short} SEK</p>
+                    <p className="mb-1 py-2">{props.product.short}</p>
                     <h4 className="mb-1 py-2"><strong>{props.product.price} SEK </strong></h4>
                     <Link to={`/products/details/${props.product._id}`}>
                         <button type="button" className="btn btn-blue px-3 mx-0 mt-3 waves-effect">Visa produkt</button>

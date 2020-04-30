@@ -3,6 +3,8 @@ import axios from 'axios'
 
 export default class ProductDetails extends Component {
 
+    // Behöver fixas i Redux istället
+
     constructor() {
         super()
 
