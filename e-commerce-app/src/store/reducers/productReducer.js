@@ -7,9 +7,12 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case actionTypes().products.fetch:
-            // console.log('reducer')
+        case actionTypes().products.fetchProducts:
                 state.products = action.payload
+                return state
+
+        case actionTypes().products.fetchProduct:
+                state.product = action.payload
                 return state
 
         default:

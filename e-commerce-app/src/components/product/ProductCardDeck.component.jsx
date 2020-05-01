@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchProducts } from '../../store/actions/products'
+import { fetchProducts } from '../../store/actions/productActions'
 import ProductCard from './ProductCard.component'
 
 function ProductCardDeck() {

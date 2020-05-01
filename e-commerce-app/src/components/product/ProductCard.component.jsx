@@ -8,16 +8,16 @@ const ProductCard = (props) => {
                 <div className="view overlay">
                     <img className="card-img-top" src={props.product.image}
                         alt="Card"></img>
-                    <Link to={`/products/details/${props.product._id}`}>
+                    <Link to={`/products/${props.product._id}`}>
                         <div className="mask rgba-white-slight"></div>
                     </Link>
                 </div>
 
                 <div className="card-body text-left">
                     <h4 className="mb-1 py-2">{props.product.name}</h4>
-                    <p className="mb-1 py-2">{props.product.short}</p>
+                    <p className="mb-1 py-2">{props.product.short} SEK</p>
                     <h4 className="mb-1 py-2"><strong>{props.product.price} SEK </strong></h4>
-                    <Link to={`/products/details/${props.product._id}`}>
+                    <Link to={`/products/${props.product._id}`}>
                         <button type="button" className="btn btn-blue px-3 mx-0 mt-3 waves-effect">Visa produkt</button>
                     </Link>
 
