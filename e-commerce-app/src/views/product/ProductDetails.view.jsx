@@ -1,17 +1,26 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
+
 import { fetchProduct } from '../../store/actions/productActions'
+import { addToCart } from '../../store/actions/cartActions'
 
 function ProductDetails() {
 
-    const dispatch = useDispatch()
-    const product = useSelector(state => state.products.product)
     const { id } = useParams()
+    const dispatch = useDispatch()
 
+    const product = useSelector(state => state.products.product)
+
+    // GET PRODUCTS
     useEffect(() => {
         dispatch(fetchProduct(id))
     }, [dispatch, id])
+
+    // ADD TO CART
+    const add = (product) => {
+        dispatch(addToCart(product))
+    }
 
     return (
         <div>
@@ -56,7 +65,7 @@ function ProductDetails() {
                                             aria-controls="collapseOne1">
                                             <h5 className="mb-0">
                                                 Description
-                                                <i className="fas fa-angle-down rotate-icon"></i>
+                                                <i className="ml-2 fas fa-angle-down rotate-icon"></i>
                                             </h5>
                                         </a>
                                     </div>
@@ -73,7 +82,7 @@ function ProductDetails() {
                                             aria-expanded="false" aria-controls="collapseTwo2">
                                             <h5 className="mb-0">
                                                 Details
-                                                <i className="fas fa-angle-down rotate-icon"></i>
+                                                <i className=" ml-2 fas fa-angle-down rotate-icon"></i>
                                             </h5>
                                         </a>
                                     </div>
@@ -90,7 +99,7 @@ function ProductDetails() {
                                             aria-expanded="false" aria-controls="collapseThree3">
                                             <h5 className="mb-0">
                                                 Shipping
-                                                    <i className="fas fa-angle-down rotate-icon"></i>
+                                                    <i className="ml-2 fas fa-angle-down rotate-icon"></i>
                                             </h5>
                                         </a>
                                     </div>
@@ -110,8 +119,9 @@ function ProductDetails() {
                                 <div className="mt-5">
                                     <div className="row mt-3">
                                         <div className="col-md-12 text-center text-md-left text-md-left">
-                                            <button className="btn btn-blue btn-lg">
-                                                <i className="fas fa-cart-plus mr-2" aria-hidden="true"></i> Lägg till varukorgen</button>
+                                            <button onClick={() => add(product)} className="btn btn-blue btn-lg">
+                                                <i className="fas fa-cart-plus mr-2" aria-hidden="true"></i> Lägg till varukorgen
+                                            </button>
                                         </div>
                                     </div>
                                 </div>

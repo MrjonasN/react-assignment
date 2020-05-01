@@ -6,3 +6,10 @@ export const addToCart = (product) => {
         payload: product
     }
 }
+
+export const decrementInCart = (id) => {
+    return {
+        type: actionTypes().cart.remove,
+        payload: id
+    }
+}

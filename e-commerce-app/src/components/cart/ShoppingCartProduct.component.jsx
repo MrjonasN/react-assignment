@@ -1,26 +1,38 @@
 import React from 'react'
-
 import './ShoppingCartProduct.styles.css'
 
-function ShoppingCartProduct() {
-    return (
+import { useDispatch } from 'react-redux'
+import { addToCart, decrementInCart } from '../../store/actions/cartActions'
 
+function ShoppingCartProduct(props) {
+
+    const dispatch = useDispatch()
+
+    const add = (product) => {
+        dispatch(addToCart(product))
+    }
+
+    const remove = (id) => {
+        dispatch(decrementInCart(id))
+    }
+
+    return (
         <div className="cart-item">
             <div className="p-2 d-flex justify-content-between align-items-center">
-                <div className="d-flex align-items-center">
-                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/14.jpg" alt="" className="img-fluid image-width"></img>
+                <div className="d-flex justify-content-between align-items-center">
+                    <img src={props.product.image} alt="" className="img-fluid image-width"></img>
                     <div>
                         <div>
-                            <strong>Philips Headphones</strong>
+                            <strong>{props.product.name}</strong>
                         </div>
                         <div>
-                            <small>1 x 5775 SEK</small>
+                            <small>{props.product.quantity} x {props.product.price} SEK</small>
                         </div>
                     </div>
 
                     <div className=" ml-5 btn-group btn-group-sm" role="group" aria-label="quantity">
-                        <button type="button" className="btn btn-grey px-3">-</button>
-                        <button type="button" className="btn btn-grey px-3" >+</button>
+                        <button onClick={() => remove(props.product._id)} type="button" className="btn btn-grey px-3">-</button>
+                        <button onClick={() => add(props.product)} type="button" className="btn btn-grey px-3" >+</button>
                     </div>
 
                     <div className="btn-group btn-group-sm" role="group" aria-label="trash">

@@ -2,13 +2,22 @@ import React from 'react'
 import ShoppingCartProduct from './ShoppingCartProduct.component'
 
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 function ShoppingCart() {
+
+    const shoppingCart = useSelector(state => state.cart.shoppingCart)
+    const totalCartAmount = useSelector(state => state.cart.totalCartAmount)
+
     return (
         <div>
-            <ShoppingCartProduct />
-            <ShoppingCartProduct />
-            <ShoppingCartProduct />
+            {
+                shoppingCart.map((product) => {
+                    return <ShoppingCartProduct key={product._id} product={product} />
+                })
+            }
+
+           
 
             {/* <div v-if="shoppingCart.length < 1" className="cart-item">
       <div className="p-3 d-flex justify-content-center align-items-center">
@@ -20,7 +29,7 @@ function ShoppingCart() {
                 <div className="ml-2">
                     <div className="total-price">
                         Totalt:
-                        <span className="ml-1"> 5775 SEK</span>
+                        <span className="ml-1"> {totalCartAmount} SEK</span>
                     </div>
                     <small className="text-muted">inkl. moms</small>
                 </div>

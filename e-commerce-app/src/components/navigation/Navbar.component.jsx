@@ -3,7 +3,12 @@ import { Link } from 'react-router-dom'
 import './Navbar.styles.css'
 import ShoppingCart from '../cart/ShoppingCart.component'
 
+import { useSelector } from 'react-redux'
+
 const Navbar = () => {
+
+  const totalCartQuantity = useSelector(state => state.cart.totalCartQuantity)
+
   return (
     <nav className="mb-1 navbar navbar-expand-lg navbar-dark elegant-color">
       <div className="container">
@@ -51,7 +56,7 @@ const Navbar = () => {
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                <span className="product-counter">1</span>
+                <span className="product-counter">{totalCartQuantity}</span>
                 <i className="fas fa-shopping-cart"></i>
               </button>
               <div className="dropdown-menu dropdown-menu-right z-depth-2 shopping-cart">
