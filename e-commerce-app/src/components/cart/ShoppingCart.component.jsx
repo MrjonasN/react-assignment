@@ -17,7 +17,7 @@ function ShoppingCart() {
                 })
             }
 
-           
+
 
             {/* <div v-if="shoppingCart.length < 1" className="cart-item">
       <div className="p-3 d-flex justify-content-center align-items-center">
@@ -28,10 +28,9 @@ function ShoppingCart() {
             <div className="p-2 d-flex justify-content-between align-items-center">
                 <div className="ml-2">
                     <div className="total-price">
-                        Totalt:
-                        <span className="ml-1"> {totalCartAmount} SEK</span>
+                        <h5>Totalt: {totalCartAmount} SEK</h5>
+                        <small className="text-muted">inkl. moms</small>
                     </div>
-                    <small className="text-muted">inkl. moms</small>
                 </div>
                 <Link to="/checkout">
                     <button type="button" className="btn mx-0 btn-blue">Gå till kassa</button>

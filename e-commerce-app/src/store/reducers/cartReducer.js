@@ -23,7 +23,7 @@ export default (state = INITIAL_STATE, action) => {
             localStorage.setItem('cart', JSON.stringify(state))
             return state
 
-        // REMOVE ITEMS FROM CART
+        // DECREMENT ITEMS FROM CART
         case actionTypes().cart.remove:
             itemIndex = state.shoppingCart.findIndex(product => product._id === action.payload)
 
@@ -36,10 +36,20 @@ export default (state = INITIAL_STATE, action) => {
             localStorage.setItem('cart', JSON.stringify(state))
             return state
 
+        // DELETE PRODUCT FROM CART
+        case actionTypes().cart.delete:
+            state.shoppingCart = state.shoppingCart.filter(item => item._id !== action.payload)
+
+            state.totalCartQuantity = getTotalQuantity(state.shoppingCart)
+            state.totalCartAmount = getTotalAmount(state.shoppingCart)
+
+            localStorage.setItem('cart', JSON.stringify(state))
+            return state
+
         default:
             let cart = JSON.parse(localStorage.getItem('cart'))
-            if(cart) state = cart
-                
+            if (cart) state = cart
+
             return state
     }
 }

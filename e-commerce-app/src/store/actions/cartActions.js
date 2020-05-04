@@ -13,3 +13,10 @@ export const decrementInCart = (id) => {
         payload: id
     }
 }
+
+export const deleteProductFromCart = (id) => {
+    return {
+        type: actionTypes().cart.delete,
+        payload: id
+    }
+}
