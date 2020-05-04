@@ -6,9 +6,10 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Navbar from './components/navigation/Navbar.component';
 import LandingPage from './views/LandingPage.view';
 import ProductDetails from './views/product/ProductDetails.view';
+import SignInSignOut from './views/sign-in-sign-out/SignInSignOut.view';
 
 function App() {
-  return (
+    return (
     <BrowserRouter>
       <Navbar />
       <div className="container mt-5">
@@ -16,6 +17,7 @@ function App() {
           <Route exact path="/" component={LandingPage} />
           <Route exact path="/products" component={LandingPage} />
           <Route exact path="/products/:id" component={ProductDetails} />
+          <Route exact path="/signin" component={SignInSignOut} />
         </Switch>
       </div>
     </BrowserRouter>

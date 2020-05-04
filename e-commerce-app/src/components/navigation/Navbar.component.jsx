@@ -47,7 +47,6 @@ const Navbar = () => {
           </ul>
           <ul className="navbar-nav ml-auto nav-flex-icons">
 
-
             <li className="nav-item dropdown">
               <button
                 className="nav-link btn m-0 mr-2"
@@ -82,7 +81,7 @@ const Navbar = () => {
             </li> */}
 
             <li className="nav-item">
-              <Link className="nav-link mt-1" to="/login">Logga in</Link>
+              <Link className="nav-link mt-1" to="/signin">Logga in</Link>
             </li>
 
           </ul>
