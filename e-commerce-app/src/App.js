@@ -6,7 +6,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Navbar from './components/navigation/Navbar.component';
 import LandingPage from './views/LandingPage.view';
 import ProductDetails from './views/product/ProductDetails.view';
-import SignInSignOut from './views/sign-in-sign-out/SignInSignOut.view';
+import SignInPage from './views/sign-in-sign-out/SignInPage.view';
+import SignUpPage from './views/sign-in-sign-out/SignUpPage.view';
 
 function App() {
     return (
@@ -17,7 +18,8 @@ function App() {
           <Route exact path="/" component={LandingPage} />
           <Route exact path="/products" component={LandingPage} />
           <Route exact path="/products/:id" component={ProductDetails} />
-          <Route exact path="/signin" component={SignInSignOut} />
+          <Route exact path="/signin" component={SignInPage} />
+          <Route exact path="/signup" component={SignUpPage} />
         </Switch>
       </div>
     </BrowserRouter>
