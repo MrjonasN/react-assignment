@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import './Navbar.styles.css'
 import ShoppingCart from '../cart/ShoppingCart.component'
 
+import { MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBIcon } from "mdbreact";
+
 import { useSelector } from 'react-redux'
 
 const Navbar = () => {
@@ -15,7 +17,6 @@ const Navbar = () => {
         <Link to="/" className="navbar-brand">
           <i className="fab fa-shopware"></i> shopware.se
           </Link>
-
         <button
           className="navbar-toggler"
           type="button"
@@ -47,7 +48,7 @@ const Navbar = () => {
           </ul>
           <ul className="navbar-nav ml-auto nav-flex-icons">
 
-            <li className="nav-item dropdown">
+            {/* <li className="nav-item dropdown">
               <button
                 className="nav-link btn m-0 mr-2"
                 type="button"
@@ -61,6 +62,21 @@ const Navbar = () => {
               <div className="dropdown-menu dropdown-menu-right z-depth-2 shopping-cart">
                 <ShoppingCart />
               </div>
+            </li> */}
+
+            <li>
+              <MDBDropdown>
+                <MDBDropdownToggle nav caret>
+                  <span className="product-counter">{totalCartQuantity}</span>
+
+                  <MDBIcon icon="shopping-cart" className="fa-shopping-cart" />
+                </MDBDropdownToggle>
+                <MDBDropdownMenu right basic className="dropdown-default shopping-cart">
+
+                  <ShoppingCart />
+
+                </MDBDropdownMenu>
+              </MDBDropdown>
             </li>
 
 

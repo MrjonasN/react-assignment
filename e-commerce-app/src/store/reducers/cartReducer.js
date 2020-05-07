@@ -38,6 +38,10 @@ export default (state = INITIAL_STATE, action) => {
 
         // DELETE PRODUCT FROM CART
         case actionTypes().cart.delete:
+
+            itemIndex = state.shoppingCart.findIndex(product => product._id === action.payload)
+            state.shoppingCart[itemIndex].quantity = 1
+
             state.shoppingCart = state.shoppingCart.filter(item => item._id !== action.payload)
             state.totalCartQuantity = getTotalQuantity(state.shoppingCart)
             state.totalCartAmount = getTotalAmount(state.shoppingCart)

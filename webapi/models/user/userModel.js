@@ -39,7 +39,8 @@ exports.registerUser = (req, res) => {
                 res.status(201).json({
                     statusCode: 201,
                     status: true,
-                    message: 'User was successfully created.'
+                    message: 'User was successfully created.',
+                    user
                 })                 
             })
             .catch(error => {

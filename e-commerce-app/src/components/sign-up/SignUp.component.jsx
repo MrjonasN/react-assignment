@@ -32,7 +32,6 @@ function SignUp() {
             email,
             password
         }
-        console.log(newUser)
 
         dispatch(signUpUser(newUser))
     }

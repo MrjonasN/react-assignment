@@ -1,6 +1,15 @@
 .fa-shopping-cart {
     font-size: 1.2rem;
+    color: white;
 }
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white
+}
+
+/* .dropdown {
+    margin-top: 6px;
+} */
 
 .product-counter {
     font-size: 1rem;
