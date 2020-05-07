@@ -119,8 +119,8 @@ function ProductDetails() {
                                 <div className="mt-5">
                                     <div className="row mt-3">
                                         <div className="col-md-12 text-center text-md-left text-md-left">
-                                            <button onClick={() => add(product)} className="btn btn-blue btn-lg">
-                                                <i className="fas fa-cart-plus mr-2" aria-hidden="true"></i> Lägg till varukorgen
+                                            <button onClick={() => add(product)} className="btn btn-blue btn-block">
+                                                <i className="fas fa-cart-plus mr-2" aria-hidden="true"></i> Lägg till
                                             </button>
                                         </div>
                                     </div>

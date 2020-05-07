@@ -36,8 +36,8 @@ function ShoppingCartProduct(props) {
                     </div>
                 </div>
                 <div className="btn-group btn-group-sm" role="group" aria-label="quantity">
-                    <button onClick={() => remove(props.product._id)} type="button" className="btn btn-grey px-3">-</button>
-                    <button onClick={() => add(props.product)} type="button" className="btn btn-grey px-3" >+</button>
+                    <button onClick={() => remove(props.product._id)} type="button" className="btn btn-grey btn-sm px-3">-</button>
+                    <button onClick={() => add(props.product)} type="button" className="btn btn-grey btn-sm px-3" >+</button>
                 </div>
 
                 <div className="btn-group btn-group-sm" role="group" aria-label="trash">

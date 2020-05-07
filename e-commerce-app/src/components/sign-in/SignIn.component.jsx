@@ -1,13 +1,17 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { signInUser } from '../../store/actions/usersActions'
 
 function SignIn() {
 
+    const history = useHistory()
     const dispatch = useDispatch()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+
+    // const currentUser = useSelector(state => state.users.currentUser)
+    // console.log(currentUser);
 
     const onChangeEmail = (e) => {
         setEmail(e.target.value);
@@ -19,9 +23,15 @@ function SignIn() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log('email:', email, 'password:', password)
 
-        dispatch(signInUser(email, password))
+        const user = {
+            email,
+            password
+        }
+
+        dispatch(signInUser(user))
+
+        history.push('/')
     }
 
 
@@ -50,14 +60,20 @@ function SignIn() {
                                 className="form-control mb-4"
                                 placeholder="Lösenord"
                                 required />
-                            <div>
-                                <p>Inte medlem? <Link to="/signup">Skapa ett konto här</Link></p>
-                            </div>
+
                             <button
-                                className="btn btn-blue btn-block my-4"
+                                className="mt-5 btn btn-elegant btn-block my-4"
                                 type="submit">
                                 Logga in
                             </button>
+
+                            <Link to="/signup">
+                                <button
+                                    className="btn btn-outline-elegant btn-block my-4"
+                                    type="submit">
+                                    Skapa konto
+                                </button>
+                            </Link>
 
                         </form>
 

@@ -1,13 +1,24 @@
 import actionTypes from '../actionTypes'
 import axios from 'axios'
 
+export const signInUser = ({ email, password }) => {
+    return async dispatch => {
+        const userData = {
+            email,
+            password
+        }
+        const res = await axios.post('http://localhost:5000/api/users/login', userData)
 
-export const signInUser = () => {
-
+        // localStorage.setItem("token", res.data.token, {expires: 1})
+        dispatch(setUser(await res.data))
+    }
 }
 
 export const setUser = (user) => {
-
+    return {
+        type: actionTypes().users.signIn,
+        payload: user
+    }
 }
 
 

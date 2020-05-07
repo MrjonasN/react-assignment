@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { signUpUser } from '../../store/actions/usersActions'
+import { useHistory } from 'react-router-dom'
 
 function SignUp() {
 
+    const history = useHistory();
     const dispatch = useDispatch()
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
@@ -25,15 +27,16 @@ function SignUp() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        
+
         const newUser = {
             firstName,
             lastName,
             email,
             password
         }
-
+        
         dispatch(signUpUser(newUser))
+        history.push('/signin')
     }
 
     return (
@@ -87,9 +90,9 @@ function SignUp() {
                                 required />
 
                             <button
-                                className="btn btn-blue my-4 btn-block"
+                                className="btn btn-elegant my-4 btn-block"
                                 type="submit"
-                            >Sign in
+                            >Skapa Konto
                             </button>
 
                         </form>

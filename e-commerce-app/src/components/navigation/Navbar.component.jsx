@@ -48,28 +48,11 @@ const Navbar = () => {
           </ul>
           <ul className="navbar-nav ml-auto nav-flex-icons">
 
-            {/* <li className="nav-item dropdown">
-              <button
-                className="nav-link btn m-0 mr-2"
-                type="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <span className="product-counter">{totalCartQuantity}</span>
-                <i className="fas fa-shopping-cart"></i>
-              </button>
-              <div className="dropdown-menu dropdown-menu-right z-depth-2 shopping-cart">
-                <ShoppingCart />
-              </div>
-            </li> */}
-
             <li>
               <MDBDropdown>
                 <MDBDropdownToggle nav caret>
-                  <span className="product-counter">{totalCartQuantity}</span>
-
-                  <MDBIcon icon="shopping-cart" className="fa-shopping-cart" />
+                  <MDBIcon icon="shopping-cart" className="fa-shopping-cart mr-2" /> Kundvagn
+                  <span className="product-counter"> ({totalCartQuantity})</span>
                 </MDBDropdownToggle>
                 <MDBDropdownMenu right basic className="dropdown-default shopping-cart">
 
@@ -79,25 +62,9 @@ const Navbar = () => {
               </MDBDropdown>
             </li>
 
-
-            {/* 
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link mr-2 dropdown-toggle"
-                type="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <i className="fas fa-user"></i>
-              </a>
-              <div className="dropdown-menu dropdown-menu-right z-depth-2">
-                <UserSettings />
-              </div>
-            </li> */}
-
             <li className="nav-item">
-              <Link className="nav-link mt-1" to="/signin">Logga in</Link>
+
+              <Link className="nav-link mt-1" to="/signin"><i className="fas fa-user mr-2 ml-2"></i>Logga in</Link>
             </li>
 
           </ul>
