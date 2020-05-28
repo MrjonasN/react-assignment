@@ -9,7 +9,8 @@ export const signInUser = ({ email, password }) => {
         }
         const res = await axios.post('http://localhost:5000/api/users/login', userData)
 
-        // localStorage.setItem("token", res.data.token, {expires: 1})
+        localStorage.setItem("token", res.data.token)
+
         dispatch(setUser(await res.data))
     }
 }

@@ -7,19 +7,9 @@ function SignIn() {
 
     const history = useHistory()
     const dispatch = useDispatch()
+
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-
-    // const currentUser = useSelector(state => state.users.currentUser)
-    // console.log(currentUser);
-
-    const onChangeEmail = (e) => {
-        setEmail(e.target.value);
-    }
-
-    const onChangePassword = (e) => {
-        setPassword(e.target.value);
-    }
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -34,7 +24,6 @@ function SignIn() {
         history.push('/')
     }
 
-
     return (
         <div className="container my-5 py-5 z-depth-1">
             <section className="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
@@ -47,16 +36,14 @@ function SignIn() {
                             <input
                                 type="email"
                                 name="email"
-                                value={email}
-                                onChange={onChangeEmail}
+                                onChange={e => setEmail(e.target.value)}
                                 className="form-control mb-4"
                                 placeholder="E-mail"
                                 required />
                             <input
                                 type="password"
                                 name="password"
-                                value={password}
-                                onChange={onChangePassword}
+                                onChange={e => setPassword(e.target.value)}
                                 className="form-control mb-4"
                                 placeholder="Lösenord"
                                 required />

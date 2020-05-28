@@ -7,23 +7,11 @@ function SignUp() {
 
     const history = useHistory();
     const dispatch = useDispatch()
+
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-
-    const onChangeFirstName = (e) => {
-        setFirstName(e.target.value)
-    }
-    const onChangeLastName = (e) => {
-        setLastName(e.target.value)
-    }
-    const onChangeEmail = (e) => {
-        setEmail(e.target.value)
-    }
-    const onChangePassword = (e) => {
-        setPassword(e.target.value)
-    }
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -53,8 +41,7 @@ function SignUp() {
                                     <input
                                         type="text"
                                         name="firstName"
-                                        value={firstName}
-                                        onChange={onChangeFirstName}
+                                        onChange={e => setFirstName(e.target.value)}
                                         className="form-control"
                                         placeholder="Förnamn"
                                         required />
@@ -63,8 +50,7 @@ function SignUp() {
                                     <input
                                         type="text"
                                         name="LastName"
-                                        value={lastName}
-                                        onChange={onChangeLastName}
+                                        onChange={e => setLastName(e.target.value)}
                                         className="form-control"
                                         placeholder="Efternamn"
                                         required />
@@ -74,8 +60,7 @@ function SignUp() {
                             <input
                                 type="email"
                                 name="email"
-                                value={email}
-                                onChange={onChangeEmail}
+                                onChange={e => setEmail(e.target.value)}
                                 className="form-control mb-4"
                                 placeholder="E-mail"
                                 required />
@@ -83,8 +68,7 @@ function SignUp() {
                             <input
                                 type="password"
                                 name="password"
-                                value={password}
-                                onChange={onChangePassword}
+                                onChange={e => setPassword(e.target.value)}
                                 className="form-control"
                                 placeholder="Password"
                                 required />
